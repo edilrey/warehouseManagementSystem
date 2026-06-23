@@ -11,9 +11,9 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<lombok.version>1.18.8</lombok.version>
+		<maven.compiler.source>25</maven.compiler.source>
+		<maven.compiler.target>25</maven.compiler.target>
+		<lombok.version>1.18.28</lombok.version>
 		<test.util.version>1.0.5</test.util.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -32,9 +32,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-    		<groupId>com.microsoft.sqlserver</groupId>
-    		<artifactId>mssql-jdbc</artifactId>
-    		<version>12.6.1.jre11</version>
+   			 <groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<version>13.4.0.jre11</version>
 		</dependency>
 	</dependencies>
 	
@@ -43,7 +43,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+			<version>3.11.0</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
@@ -52,7 +52,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.4</version>
+				<version>0.8.8</version>
 				<executions>
 					<execution>
 						<id>prepare-agent</id>
@@ -73,7 +73,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.22.2</version>
+					<version>3.0.0</version>
 					<configuration>
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resources/AllTests.tng.xml</suiteXmlFile>
