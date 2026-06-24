@@ -2,7 +2,8 @@ package features.inventory.domains.entities;
 
 public class Product {
     private int product_id;
-    private String product_name, status;
+    private String product_name;
+    private String status;
 
     Product(int product_id,
             String product_name,

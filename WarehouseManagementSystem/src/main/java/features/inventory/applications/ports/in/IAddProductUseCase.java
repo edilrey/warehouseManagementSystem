@@ -1,5 +1,7 @@
 package features.inventory.applications.ports.in;
 
-public interface IAddProductUseCase {
+import features.inventory.applications.ports.out.IAddProductOutput;
 
+public interface IAddProductUseCase {
+    public void execute(IAddProductCommand command, IAddProductOutput presenter);
 }
