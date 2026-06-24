@@ -1,17 +1,19 @@
 package features.inventory.domains.entities;
 
+import java.util.UUID;
+
 public class Product {
-    private int product_id;
-    private String product_name;
+    private UUID id;
+    private String name;
     private String status;
 
-    Product(int product_id,
-            String product_name,
+    Product(UUID id,
+            String name,
             String status) {
-        this.product_id = product_id;
-        this.product_name = product_name;
+        this.id = id;
+        this.name = name;
         this.status = status;
-        if (product_name == null || product_name.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             throw new IllegalArgumentException("Product name cannot be null or empty");
         }
         if (status == null || status.isEmpty()) {
@@ -19,12 +21,12 @@ public class Product {
         }
     }
 
-    public int getProductId() {
-        return product_id;
+    public UUID getProductId() {
+        return id;
     }
 
     public String getProductName() {
-        return product_name;
+        return name;
     }
 
     public String getStatus() {
