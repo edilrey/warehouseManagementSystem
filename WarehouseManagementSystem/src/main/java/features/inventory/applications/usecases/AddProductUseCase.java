@@ -1,20 +1,19 @@
 package features.inventory.applications.usecases;
 
-import features.inventory.applications.ports.in.IAddProductCommand;
-import features.inventory.applications.ports.in.IAddProductUseCase;
-import features.inventory.applications.ports.out.IAddProductOutput;
-import features.inventory.applications.ports.out.IAddProductRepository;
+import features.inventory.applications.ports.out.IProductRepository;
+import features.inventory.domains.entities.Product;
+import interfaces.IPresenterOutput;
 
-public class AddProductUseCase implements IAddProductUseCase {
-    private IAddProductRepository addProductRepository;
+public class AddProductUseCase {
+    private IProductRepository productRepo;
 
-    public AddProductUseCase(IAddProductRepository addProductRepository) {
-        this.addProductRepository = addProductRepository;
+    public AddProductUseCase(IProductRepository productRepo) {
+        this.productRepo = productRepo;
 
     }
 
-    public void execute(IAddProductCommand command, IAddProductOutput presenter) {
-        addProductRepository.add(command);
-        presenter.presentSuccess(command.getProduct());
+    public void execute(Product product, IPresenterOutput presenter) {
+        productRepo.add(product);
+        presenter.presentSuccess(product);
     }
 }
