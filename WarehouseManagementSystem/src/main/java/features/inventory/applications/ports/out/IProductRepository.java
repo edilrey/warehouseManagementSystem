@@ -10,6 +10,8 @@ public interface IProductRepository {
 
     public void deleteById(UUID product_id);
 
+    public void editById(String id, String name, String status, int quantity);
+
     public Product getById(UUID product_id);
 
     public List<Product> getAll();
